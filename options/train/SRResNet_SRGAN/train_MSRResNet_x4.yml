@@ -13,8 +13,8 @@ datasets:
   train:
     name: train_spot_pleadis
     type: PairedImageDataset
-    dataroot_gt: D:\pixxel\work\superres_spot\ml-rnd-hub\data\hr\
-    dataroot_lq: D:\pixxel\work\superres_spot\ml-rnd-hub\data\lr\
+    dataroot_gt: data\hr\
+    dataroot_lq: data\lr\
     filename_tmpl: '{}'
     io_backend:
       type: disk
@@ -33,8 +33,8 @@ datasets:
   val:
     name: val
     type: PairedImageDataset
-    dataroot_gt: D:\pixxel\work\superres_spot\ml-rnd-hub\data\hr_valid\
-    dataroot_lq: D:\pixxel\work\superres_spot\ml-rnd-hub\data\lr_valid\
+    dataroot_gt: data\hr_valid\
+    dataroot_lq: data\lr_valid\
     io_backend:
       type: disk
 
