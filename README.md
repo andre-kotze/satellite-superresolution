@@ -45,9 +45,9 @@ Separate conda environment with `Python >= 3.7` and `tensorflow-gpu` is recommen
 
 ### Starting the process
 
-1. Running the SRRSNET Model `python basicsr/train.py --options options\train\SRResNet_SRGAN\train_MSRResNet_x4.yml`
-2. Running the SRGAN Model `python basicsr/train.py --options options\train\SRResNet_SRGAN\train_MSRGAN_x4.yml`
-3. Inference from SRGAN Model `python basicsr/test.py --options options\test\SRResNet_SRGAN\test_MSRGAN_x4.yml`
+1. Running the SRRSNET Model `python basicsr/train.py -opt options/train/SRResNet_SRGAN/train_MSRResNet_x4.yml`
+2. Running the SRGAN Model `python basicsr/train.py --options options/train/SRResNet_SRGAN/train_MSRGAN_x4.yml`
+3. Inference from SRGAN Model `python basicsr/test.py --options options/test/SRResNet_SRGAN/test_MSRGAN_x4.yml`
 
 ## :heart: References
 
