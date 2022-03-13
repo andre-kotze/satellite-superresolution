@@ -5,6 +5,7 @@ numpy
 opencv-python
 Pillow
 pyyaml
+rasterio
 requests
 scikit-image
 scipy
