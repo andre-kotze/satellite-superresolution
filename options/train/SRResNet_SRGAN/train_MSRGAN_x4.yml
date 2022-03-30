@@ -118,6 +118,11 @@ val:
       crop_border: 4
       test_y_channel: false
 
+    ssim:
+      type: calculate_ssim
+      crop_border: 4
+      test_y_channel: false
+
 # logging settings
 logger:
   print_freq: 500

@@ -160,18 +160,18 @@ class SRModel(BaseModel):
                 if self.opt['is_train']:
 #                     save_img_path = osp.join(self.opt['path']['visualization'], img_name,
 #                                              f'{img_name}_{current_iter}.png')
-                    with rasterio.open("/home/jovyan/srres/BasicSR/data/hr_valid/"+img_name+".tif") as dataset:
+                    with rasterio.open("data/hr_valid/"+img_name+".tif") as dataset:
 
                             profile = dataset.profile.copy()
 
-                            with rasterio.open('/home/jovyan/srres/BasicSR/tiffresults/'+img_name+".tif", 'w', **profile) as dst:
+                            with rasterio.open('tiffresults/'+img_name+".tif", 'w', **profile) as dst:
                                 dst.write(np.transpose(sr_img.astype(np.float32),(2,0,1)))
                 else:
-#                     with rasterio.open("/home/jovyan/srres/BasicSR/data/hr_test/"+img_name+".tif") as dataset:            
+#                     with rasterio.open("data/hr_test/"+img_name+".tif") as dataset:            
 #                             profile = dataset.profile.copy()
                     
                         upscale_factor = 4
-                        dataset = rasterio.open("/home/jovyan/srres/BasicSR/data/lr_temp/"+img_name+".tif")
+                        dataset = rasterio.open("data/lr_temp/"+img_name+".tif")
                         profile = dataset.profile.copy()
                         profile['width']=int(dataset.width * upscale_factor)
                         profile['height']=int(dataset.height * upscale_factor)
@@ -182,7 +182,7 @@ class SRModel(BaseModel):
                         )
 
                         profile['transform']=transform
-                        with rasterio.open('/home/jovyan/srres/BasicSR/tiffresults/'+img_name+".tif", 'w', **profile) as dst:
+                        with rasterio.open('tiffresults/'+img_name+".tif", 'w', **profile) as dst:
                             dst.write(np.transpose(sr_img.astype(np.float32),(2,0,1)))
 #                     if self.opt['val']['suffix']:
 #                         save_img_path = osp.join(self.opt['path']['visualization'], dataset_name,
